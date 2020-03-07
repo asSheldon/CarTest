@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <!-- <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.1.0/css/bootstrap.min.css"> -->
+  <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdn.staticfile.org/popper.js/1.12.5/umd/popper.min.js"></script>
+  <!-- <script src="https://cdn.staticfile.org/twitter-bootstrap/4.1.0/js/bootstrap.min.js"></script> -->
+  <link rel="stylesheet" href="/assets/font-awesome-4.7.0/css/font-awesome.css">
+  <link rel="stylesheet" href="/assets/font-awesome-4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.css">
+  <script src="/node_modules/jquery/dist/jquery.js"></script>
+  <script src="/node_modules/bootstrap/dist/js/bootstrap.js"></script>
+      <!-- Favicon -->
+      <!-- <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">  -->
+  <!-- <link rel="stylesheet" href="/assets/css/Home_css.css"> -->
+  <link rel="stylesheet" href="/assets/css/zerogrid.css">
+  <link rel="stylesheet" href="/assets/css/style1.css">
+  <link rel="stylesheet" href="/assets/css/responsiveslides.css">
+      <!-- Theme Styles -->
+  <link href="../assets/css/scrolling-nav.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="../assets/css/styles.css">
+  
+  <script src="/assets/js/jquery-latest.min.js"></script>
+  <script src="/assets/js/script.js"></script>
+  <script src="/assets/js/jquery183.min.js"></script>
+  <script src="/assets/js/responsiveslides.min.js"></script>
+
+  <script>
+    // You can also use "$(window).load(function() {"
+    $(function () {
+      // Slideshow 
+      $("#slider").responsiveSlides({
+        auto: true,
+        pager: false,
+        nav: true,
+        speed: 500,
+        namespace: "callbacks",
+        before: function () {
+          $('.events').append("<li>before event fired.</li>");
+        },
+        after: function () {
+          $('.events').append("<li>after event fired.</li>");
+        }
+      });
+    });
+</script>
+    <title>Home</title>
+</head>
+<body>
+    <!-- <header id="top"> -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-white fixed-top" id="mainNav">
+		<div class="container">
+		  <a class="navbar-brand js-scroll-trigger" href="/">car <b>plus</b></a>  
+		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="ti-menu text-white"></span>
+		  </button>
+		  <div class="collapse navbar-collapse" id="navbarResponsive">
+			<ul class="navbar-nav ml-auto">
+			<li class="nav-item">
+				<a class="nav-link js-scroll-trigger" href="/">Home</a>
+			  </li>
+			  <li class="nav-item">
+				<a class="nav-link js-scroll-trigger" href="/services">Services</a>
+			  </li>
+			   <li class="nav-item">
+				<a class="nav-link js-scroll-trigger" href="/CarRental">Car Rental</a>
+              </li>
+              {{if user}}
+			 
+              {{else}}
+              <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="/login">Login</a>
+                  </li>
+              {{/if}}
+            </ul>
+            <ul class="nav navbar-nav navbar-right" >
+                {{if user}}
+                    <a class="navbar-brand" href="/">
+                        <img width="25px" src="/images/head.jpg" alt="" >&nbsp;&nbsp;{{user}}</a>
+                    <li class="dropdown">
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img width="20" height="20" src="../public/img/avatar-max-img.png" alt=""> <span class="caret"></span></a>
+                      <ul class="dropdown-menu">
+                        <li class="dropdown-current-user">
+                          当前登录用户: {{user}}
+                        </li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="/setting/admin">个人主页</a></li>
+                        <li><a href="/myident">我的订单</a></li>
+                        <li><a href="/shopping">购物车</a></li>
+                        <li><a href="/out">退出</a></li>
+                      </ul>
+                    </li>
+                    {{else}}
+                    {{/if}}
+                  </ul>
+                  
+		  </div>
+		</div>
+      </nav>
+    <!-- </header> -->
+    <!-- Static navbar -->
+      
+    <!--图片轮播图-->
+    <div id="demo" class="carousel slide" data-ride="carousel">
+ 
+        <!-- 指示符 -->
+        <ul class="carousel-indicators">
+          <li data-target="#demo" data-slide-to="0" class="active"></li>
+          <li data-target="#demo" data-slide-to="1"></li>
+          <li data-target="#demo" data-slide-to="2"></li>
+        </ul>
+       
+        <!-- 轮播图片 -->
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="/images/slider-img-1.jpg" width="100%" height="70%">
+          </div>
+          <div class="carousel-item">
+            <img src="/images/slider-img-2.jpg" width="100%" height="70%">
+            <div class="carousel-caption">
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="/images/slider-img-3.jpg" width="100%" height="70%">
+            <div class="carousel-caption">
+            </div>
+          </div>
+        </div>
+        <!-- 左右切换按钮 -->
+        <a class="carousel-control-prev" href="#demo" data-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next" href="#demo" data-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </a>
+       
+    </div>  
+
+    <section id="container">
+        <div class="wrap-container clearfix">
+            <div id="main-content">
+                <div class="wrap-box"><!--Start Box-->
+                    <div class="zerogrid">
+                        <div class="header">
+                            <h2 style="color:#fff">FEATURED CARS</h2>
+                        </div>	
+                        <div class="row">
+                            <div class="col-1-3">
+                                <div class="wrap-col">
+                                    <div class="item t-center">
+                                        <div class="item-container">
+                                            <a href="https://www.astonmartin.com/zh-chs/" target="_blank">
+                                                <div class="item-caption">
+                                                    <div class="item-caption-inner">
+                                                        <div class="item-caption-inner1">
+                                                            <span>2006 / 32,000 km / 250 HP / petrol / automatic /  Sports car/Coupe / Beige</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <img src="/images/car1.jpg">
+                                            </a>
+                                        </div>
+                                        <div class="item-info">
+                                            <a href="https://www.astonmartin.com/zh-chs/" target="_blank"><h3>LAMBORGHINI GALLARDO</h3></a>
+                                            <p>32,000 km €78,400</p>
+                                        </div>
+                                    </div>
+                                    <div class="item t-center">
+                                        <div class="item-container">
+                                            <a href="https://www.jaguar.com.cn/index.html?utm_source=BaiduPC&utm_medium=7V9kg&utm_term=%E6%8D%B7%E8%B1%B9&utm_adgroup=JaguarBrand&utm_campaign=JA1608KWREG&utm_content=Brand%2D%E6%A0%B8%E5%BF%83&utm_channel=sem&mz_ca=2147829&mz_sp=7V9kg&mz_kw=19265318&mz_sb=1" target="_blank">
+                                                <div class="item-caption">
+                                                    <div class="item-caption-inner">
+                                                        <div class="item-caption-inner1">
+                                                            <span>2006 / 32,000 km / 250 HP / petrol / automatic /  Sports car/Coupe / Beige</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <img src="images/car5.jpg">
+                                            </a>
+                                        </div>
+                                        <div class="item-info">
+                                            <a href="https://www.jaguar.com.cn/index.html?utm_source=BaiduPC&utm_medium=7V9kg&utm_term=%E6%8D%B7%E8%B1%B9&utm_adgroup=JaguarBrand&utm_campaign=JA1608KWREG&utm_content=Brand%2D%E6%A0%B8%E5%BF%83&utm_channel=sem&mz_ca=2147829&mz_sp=7V9kg&mz_kw=19265318&mz_sb=1" target="_blank"><h3>LAMBORGHINI GALLARDO</h3></a>
+                                            <p>32,000 km €78,400</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-1-3">
+                                <div class="wrap-col">
+                                    <div class="item t-center">
+                                        <div class="item-container">
+                                            <a href="https://www.astonmartin.com/zh-chs/" target="_blank">
+                                                <div class="item-caption">
+                                                    <div class="item-caption-inner">
+                                                        <div class="item-caption-inner1">
+                                                            <span>2006 / 32,000 km / 250 HP / petrol / automatic /  Sports car/Coupe / Beige</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <img src="images/car2.jpg">
+                                            </a>
+                                        </div>
+                                        <div class="item-info">
+                                            <a href="https://www.astonmartin.com/zh-chs/" target="_blank"><h3>LAMBORGHINI GALLARDO</h3></a>
+                                            <p>32,000 km €78,400</p>
+                                        </div>
+                                    </div>
+                                    <div class="item t-center">
+                                        <div class="item-container">
+                                            <a href="http://maserati-gz.com/" target="_blank">
+                                                <div class="item-caption">
+                                                    <div class="item-caption-inner">
+                                                        <div class="item-caption-inner1">
+                                                            <span>2006 / 32,000 km / 250 HP / petrol / automatic /  Sports car/Coupe / Beige</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <img src="images/car4.jpg">
+                                            </a>
+                                        </div>
+                                        <div class="item-info">
+                                            <a href="http://maserati-gz.com/" target="_blank"><h3>LAMBORGHINI GALLARDO</h3></a>
+                                            <p>32,000 km €78,400</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-1-3">
+                                <div class="wrap-col">
+                                    <div class="item t-center">
+                                        <div class="item-container">
+                                            <a href="https://www.audi.cn/cn/web/zh.html" target="_blank">
+                                                <div class="item-caption">
+                                                    <div class="item-caption-inner">
+                                                        <div class="item-caption-inner1">
+                                                            <span>2006 / 32,000 km / 250 HP / petrol / automatic /  Sports car/Coupe / Beige</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <img src="images/car3.jpg">
+                                            </a>
+                                        </div>
+                                        <div class="item-info">
+                                            <a href="https://www.audi.cn/cn/web/zh.html" target="_blank"><h3>LAMBORGHINI GALLARDO</h3></a>
+                                            <p>32,000 km €78,400</p>
+                                        </div>
+                                    </div>
+                                    <div class="item t-center">
+                                        <div class="item-container">
+                                            <a href="https://www.bentleymotors.com/cn/zh.html" target="_blank">
+                                                <div class="item-caption">
+                                                    <div class="item-caption-inner">
+                                                        <div class="item-caption-inner1">
+                                                            <span>2006 / 32,000 km / 250 HP / petrol / automatic /  Sports car/Coupe / Beige</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <img src="images/car1.jpg">
+                                            </a>
+                                        </div>
+                                        <div class="item-info"> 
+                                            <a href="https://www.bentleymotors.com/cn/zh.html" target="_blank"><h3>LAMBORGHINI GALLARDO</h3></a>
+                                            <p>32,000 km €78,400</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="wrap-box t-center" style="background: black;color: #fff;"><!--Start Box-->
+                    <div class="zerogrid">
+                        <div class="header">
+                            <h2>WELCOME TO CAR PLUS</h2>
+                        </div>
+                        <strong>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</strong>
+                        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo</p>
+                    </div>
+                </div>
+               
+                        
+            </div>
+        </div>
+    </section>
+
+    <!--页面中部综合内容-->
+
+    <!-- 页面底部 -->
+    <footer style="clear: both; background-color: black; text-decoration:none;
+    color: #fff;">
+
+      <div class="container">
+        <div class="row">
+          <div class="footer-containertent">
+
+              <p>
+                  <a href="#" target="_blank">关于我们</a>
+                  <a href="#" target="_blank">联系我们</a>
+                  <a href="#" target="_blank">Investor Relations</a>
+                  <a href="#" target="_blank">招贤纳士</a>
+                  <a href="#" target="_blank">隐私政策</a>
+                  <em class="fline">|</em>
+                  <a class="footios" href="#" target="_blank">iPhone客户端</a>
+                  <em class="fline">/</em>
+                  <a href="#" target="_blank">iPad客户端</a>
+                  <a class="footand" href="#" target="_blank">Android客户端</a><br>
+                  <a class="footwp" href="#" target="_blank">WP客户端</a>
+                  <a class="footphone" href="#" target="_blank">手机版</a>
+                  <em class="fline">|</em>
+                  <a class="footweibo" href="#" target="_blank">Car Plus</a>
+              </p>
+
+              <p>
+                  <a class="footpolice" href="#" target="_blank">京公网安备 11010802000104号</a>
+                  <em class="fline">|</em>
+                  <a target="_blank" href="#">广播电视节目制作经营许可证（京）字第05793号</a>
+                  <em class="fline">|</em>
+                  <a target="_blank" href="#">营业执照</a>
+                  <em class="fline">|</em>
+                  <a target="_blank" href="#">京ICP备09113703号-1</a>
+                  <em class="fline">|</em>
+                  <a target="_blank" href="#">信息网络传播视听节目许可证: 0110553</a>
+                  <em class="fline">|</em>
+                  <a target="_blank" href="#">测绘资质证</a>
+              </p>
+
+              <p>
+                  <a href="#" target="_blank">电信与信息服务业务经营许可证: 京ICP证070240号</a>
+                  <em class="fline">|</em>
+                  <a target="_blank" href="#">京网文[2019]0025-001号</a>
+                  <em class="fline">|</em>
+                  <a href="#" target="_blank">中国互联网协会会员单位</a>
+                  <em class="fline">|</em>
+                  <span>违法和不良信息举报: 4000666850-2 jubao@autohome.com.cn</span>
+              </p>
+
+              <p>
+                  <span>© 2019-2200 www.CarPlus.com.cn All Rights Reserved. Car Plus 版权所有</span>
+              </p>
+
+              <p>
+                  <a class="footimg footimg-a" href="http://si.trustutn.org/info?sn=251170309027375523220&amp;certType=1" target="_blank">品牌官网</a>
+                  <a class="footimg footimg-b" href="http://www.itrust.org.cn/yz/pjwx.asp?wm=1793434609" target="_blank">中国信用企业</a>
+               
+                  <a class="footimg footimg-d" href="http://www.12377.cn" target="_blank">中国互联网举报中心</a>
+                  <a class="footimg footimg-e" href="http://www.bjjubao.org" target="_blank">北京互联网举报中心</a>
+                  <a class="footimg footimg-f" href="http://www.12377.cn/node_548446.htm" target="_blank">网络举报APP下载</a>
+              </p>
+              <p>Copyright © 2017.Company name All rights reserved.More Templates <a href="/" target="_blank" title="Car Plus">Car Plus</a> - Collect from <a href="/" title="Car Plus" target="_blank">Car Plus</a></p>
+          </div>
+        </div>
+      </div>
+    </footer>
+</body>
+</html>

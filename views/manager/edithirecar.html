@@ -1,0 +1,46 @@
+<html>
+<head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="author" content="order by dede58.com"><title>Car-后台管理员系统</title>
+        <link rel="stylesheet" href="/assets/manager-css/inputimg.css">
+        <link rel="stylesheet" href="/assets/manager-css/jquery.wysiwyg.old-school.css">
+        
+        <!-- jQuery AND jQueryUI -->
+        <script type="text/javascript" src="/assets/manager-js/jquery.min.js"></script>
+        <script src="http://libs.baidu.com/jqueryui/1.9.0/jquery-ui.min.js "></script>
+        <script type="text/javascript" src="/assets/manager-js/min.js"></script>
+        <!--<script type="text/javascript" src="js/index.js"></script>-->
+        <script type="text/javascript" src="/assets/manager-js/main.js"></script>
+        <link rel="stylesheet" href="/assets/manager-css/style2.css">
+        
+        </head>
+        <body
+         class="modal white">
+        <!--     内容      -->
+        <div id="content" class="white">
+        <!--
+        
+        -->
+        <div class="bloc">
+                <div class="title">编辑车辆<a class="toggle"></a><a href="#" class="toggle"></a></div>
+                <div class="content" style="height: 290px; display: block;">
+                        <form action="/manager/edithirecars" method="post">
+                                <p>车辆编号：<input type="text" name="CarId"value="{{id}}"/></p>
+                                <p>车辆名称：<input type="text" name="CarName" value="{{model}}"/></p>
+                                <p>车辆类型：<input type="text" name="Carmodel" value="{{type}}"/></p>
+                                <p>租车费  ：<input type="text" name="CarPrice"value="{{price}}"/></p>
+                                  <br>
+                        
+                                <button type="submit">确认修改</button>
+                              </form>
+                </div>
+        </div>
+        </div>
+        <br>
+        
+        <div id="ui-datepicker-div" class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all"></div>
+        <br>
+        
+        </body>
+
+        </html>

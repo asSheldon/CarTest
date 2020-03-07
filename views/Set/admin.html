@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Setting</title>
+    <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/popper.js/1.12.5/umd/popper.min.js"></script>
+    <link rel="stylesheet" href="/assets/font-awesome-4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" href="/assets/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.css">
+    <script src="/node_modules/jquery/dist/jquery.js"></script>
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="/assets/css/zerogrid.css">
+    <!-- <link rel="stylesheet" href="/assets/css/style1.css"> -->
+    <link href="../assets/css/scrolling-nav.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../assets/css/styles.css">
+
+</head>
+
+<body>
+    <!-- <header id="top"> -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-white fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand js-scroll-trigger" href="/"> <b>用户中心</b></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="ti-menu text-white"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto" >
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="/" style="color: black;">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="/services"style="color: black;">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="/CarRental"style="color: black;">Car Rental</a>
+                    </li>
+                    {{if user}}
+
+                    {{else}}
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="/login"style="color: black;">Login</a>
+                    </li>
+                    {{/if}}
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    {{if user}}
+                    <a class="navbar-brand" href="/">
+                        <img width="25px" src="/images/head.jpg" alt=""></a>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                            aria-expanded="false"><img width="20" height="20" src="../public/img/avatar-max-img.png"
+                                alt=""> <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-current-user">
+                                当前登录用户: {{user}}
+                            </li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="/setting/admin">个人主页</a></li>
+                            <li><a href="/myident">我的订单</a></li>
+                            <li><a href="/shopping">购物车</a></li>
+                            <li><a href="/out">退出</a></li>
+                        </ul>
+                    </li>
+                    {{else}}
+                    {{/if}}
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+    <br><br><br><br>
+    <section class="container">
+            {{include '../partials/setting-nav2.html'}}
+            <div class="col-md-5">
+              <div class="subhead">
+                <h2>修改密码</h2>
+              </div>
+              <hr>
+              <form id="login_form">
+                {{ if user }}
+                {{ if pwd}}
+                <div class="form-group">
+                  <label for="exampleInputPassword1">当前密码</label>
+                  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="" value="{{ pwd }}">
+                </div>
+                {{ else }}
+                {{ /if }}
+                <div class="form-group">
+                  <label for="exampleInputPassword1">新的密码</label>
+                  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="" >
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">确认密码</label>
+                  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="" name="newpwd">
+                </div>
+                <button type="submit" class="btn btn-success">保存</button>
+                {{ else }}
+                {{ /if }}
+              </form>
+              <div class="subhead">
+                <h2>注销账号</h2>
+                <hr>
+              </div>
+              <div>
+                <p>一旦注销，不可找回，请谨慎操作</p>
+                <button class="btn btn-danger">删除</button>
+              </div>
+              <hr>
+            </div>
+          </section>
+
+
+		  <script src="/node_modules/jquery/dist/jquery.js"></script>
+		<script>
+			$('#login_form').on('submit', function (e) {
+				e.preventDefault()
+				var formData = $(this).serialize()
+				console.log(formData)
+				$.ajax({
+					url: '/update',
+					type: 'post',
+					data: formData,
+					dataType: 'json',
+					success: function (data) {
+					var err_code = data.err_code
+					if (err_code === 0) {
+						window.alert('修改成功！')
+						// 服务端重定向针对异步请求无效
+						// window.location.href = '/Home'
+					} else if (err_code === 1) {
+						window.alert('修改密码失败')
+					} else if (err_code === 500) {
+						window.alert('服务器忙，请稍后重试！')
+					}
+					}
+				})
+				})
+  </script>          
+</body>
+
+</html>

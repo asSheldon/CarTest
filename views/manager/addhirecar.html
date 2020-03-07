@@ -1,0 +1,128 @@
+<html>
+<head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="author" content="order by dede58.com"><title>Car-后台管理员系统</title>
+        <link rel="stylesheet" href="/assets/manager-css/inputimg.css">
+        
+        <link rel="stylesheet" href="/assets/manager-css/jquery.wysiwyg.old-school.css">
+        <!-- jQuery AND jQueryUI -->
+        <script type="text/javascript" src="/assets/manager-js/jquery.min.js"></script>
+        <script src="http://libs.baidu.com/jqueryui/1.9.0/jquery-ui.min.js "></script>
+        <script type="text/javascript" src="/assets/manager-js/min.js"></script>
+        <!--<script type="text/javascript" src="js/index.js"></script>-->
+        <script type="text/javascript" src="/assets/manager-js/main.js"></script>
+        <link rel="stylesheet" href="/assets/manager-css/style2.css">
+        </head>
+        <body
+         class="modal white">
+        
+        
+        <!--     内容      -->
+        <div id="content" class="white">
+        <!--
+        
+        -->
+        <div class="bloc">
+                <div class="title">新增车辆<a class="toggle"></a><a href="#" class="toggle"></a></div>
+                <div class="content" style="height: 290px; display: block;">
+                        <form action="/manager/hireaddcars" method="post" enctype="multipart/form-data">
+                          
+                                  <p>车辆编号：<input type="text" name="CarId"/></p>
+                                  <p>车辆名称：<input type="text" name="CarName"/></p>
+                                  <p>车辆类型：<input type="text" name="CarType"/></p>
+                                  <p>乘坐人数：<input type="text" name="CarSum"/></p>
+                                  <p>租车费  ：<input type="text" name="CarPrice"/></p>
+                                  <p>车辆图片:
+                                        <a href="javascript:;" class="file">
+                                                <input type="file" name="CarPic">
+                                        </a>
+                                </p>
+                                  <br>
+                        
+                                <button type="submit">确认添加</button>
+                                  
+                         
+                        </form>
+                                <!-- <div class="input1">
+                                        <label for="CarId">车辆编号</label>
+                                        <input type="text" id="CarId" name="CarId">
+                                </div>
+                                <div class="input2">
+                                        <label for="CarName">车辆名称</label>
+                                        <input type="text" id="CarName" placeholder="请输入车辆名称" name="CarName">
+                                </div>
+                                <div class="input3">
+                                        <label for="CarPrice">报价</label>
+                                        <input type="text" id="CarPrice" name="CarPrice" width="50px">(*万元)
+                                </div>
+                                <div class="input4">
+                                        <label for="CarPic">汽车图片</label>
+                                        <input id="CarPic" type="file" name="image" accept="image/png,image/jpg">
+                                       
+                                </div>
+                                <br><br>
+                                <div class="submit">
+                                        <input class="button" name="submit" type="submit" id="addcars" value="确认添加">
+                                        <a href="/addcar" style="text-decoration: none;"><input class="button" name="submit" type="submit" value="返回"></a>
+                                </div> -->
+                        
+                </div>
+        </div>
+        </div>
+        <br>
+        
+        <div id="ui-datepicker-div" class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all"></div>
+        <br>
+        
+        </body>
+        <script>
+                /* var fileImg;
+                function fileUpload(_this) {
+                        var fileReader = new FileReader();//创建文件读取对象
+                        fileImg = _this.files[0];//获取file组件中的文件
+                }
+                $("#addcars").click(function(){
+                        var data = new FormData();
+                            data.append("CarId",$("#CarId").val());
+                            data.append("CarName",$("#CarName").val());
+                            data.append("CarPrice",$("#CarPrice").val());
+                        if (fileImg != null) {
+                            data.append("image", fileImg);
+                        }   
+                        $.ajax({
+                        url: '/addcars',
+                        type: 'post',
+                        data: data,
+                        async: true,
+                        processData: false,
+                        contentType: false,
+                        contextType: "application/json",
+                        success: function (res) {
+                        var res = JSON.parse(res);
+                        console.log(res);
+                        $('.img').attr('src', res.result[0].imgUrl);
+                        },
+                        error: function (err) {
+                                console.log(err);
+                         }
+                 }); */
+                            /* var data = new FormData();
+                            data.append("CarId",$("#CarId").val());
+                            data.append("CarName",$("#CarName").val());
+                            data.append("CarPrice",$("#CarPrice").val());
+                            data.append("CarPic",$("#CarPic").get(0).files[0]);
+                        $.ajax({
+                            type: 'POST',
+                            url : '/addcars',
+                            data : data,
+                            contentType: false,
+                            processData: false,
+                            success : function(data){
+                            alert("添加成功");
+                            console.log(data);
+                        },
+                        });          */            
+                //});
+                
+        </script>
+        </html>

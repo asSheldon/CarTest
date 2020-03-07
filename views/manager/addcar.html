@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Car-后台管理员系统</title>
+</head>
+
+<link href="https://cdn.bootcss.com/metisMenu/3.0.4/metisMenu.min.css" rel="stylesheet">
+<link href="https://cdn.bootcss.com/font-awesome/5.11.2/css/all.min.css" rel="stylesheet">
+<link href="https://cdn.bootcss.com/startbootstrap-sb-admin-2/3.3.7+1/css/sb-admin-2.min.css" rel="stylesheet">
+<link rel="stylesheet" href="/assets/manager-css/style.css">
+<link rel="stylesheet" href="/assets/manager-css/style2.css">
+<link rel="stylesheet" type="text/css" href="/assets/manager-css/bootstrap.css">
+<link rel="stylesheet" href="/assets/manager-css/jquery.wysiwyg.old-school.css">
+
+
+
+
+<!-- <link rel="stylesheet" type="text/css" href="../css/person.css"> -->
+
+
+<body>
+    <div class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/manager/person"><i class="fa fa-car fa-fw" aria-hidden="true" ></i>Car-后台管理员系统</a>
+        </div>
+        <ul class="nav navbar-top-links navbar-right">
+            {{if user}}
+            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                Hi,{{user}}
+                <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i> </a>
+                <ul class="dropdown-menu dropdown-user">
+                    <li><a href="#"><i class="fa fa-user fa-fw"></i> 用户信息</a></li>
+                    <li><a href="#"><i class="fa fa-gear fa-fw"></i> 设置中心</a></li>
+                    <li class="divider"></li>
+                    <li><a href="/manager/login"><i class="fa fa-sign-out fa-fw"></i> 登出系统</a></li>
+                    
+                </ul>
+            </li>
+            {{else}}
+            {{/if}}
+        </ul>
+        <div class="navbar-default sidebar" role="navigation" style="display: block;">
+            <div class="sidebar-nav navbar-collapse">
+                <ul class="nav" id="side-menu">
+                    <li><a href="/manager/person"><i class="fa fa-dashboard fa-fw"></i>系统首页</a></li>
+                    <li><a href="/manager/user"><i class="fa fa-dashboard fa-fw"></i>用户管理</a></li>
+                    <li><a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> 汽车管理<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li><a href="/manager/addcar">添加汽车</a></li>
+                            <li><a href="/manager/hirecar">租车服务</a></li>
+                        </ul>
+                    </li>
+                   <li><a href="#"><i class="fa fa-edit fa-fw"></i>统计查询<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li><a href="/manager/sales">销售量统计</a></li>
+                            <li><a href="/manager/clicks">点击量统计</a></li> 
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-question-circle-o fa-fw" aria-hidden="true"></i>关于系统</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="content" class="white">
+        <h1><img src="/assets/manager-images/posts.png" alt=""></i>添加汽车</h1>
+        
+        <!--操作栏-->
+        <div class="bloc">
+                <div class="title"> 操作 <a class="toggle"></a><a href="#" class="toggle"></a></div>
+                <div class="content dashboard">
+                        <div class="center" style="display: block; width: auto;"> 
+                         <a href="/manager/addcaredit" class="shortcut zoombox w500 h300"> <img src="/assets/manager-images/add.png" alt="" width="48" height="48"> 添加车辆 </a> 
+                                <div class="cb"></div>
+                        </div>
+                </div>
+        </div>
+        
+        
+        <div class="bloc">
+                <div class="title"> 汽车列表 <a href="http://www.grafikart.fr/demo/coreadmin/index.php?p=table#" class="toggle"></a><a href="#" class="toggle"></a></div>
+                <div class="content">
+                        <table>
+                                <thead>
+                                        <tr>
+                                                <th>汽车编号</th>
+                                                <th>汽车名称</th>
+                                                <th>报价(万元)</th> 
+                                                <th>汽车图片</th>                                                                                  
+                                                <th>操作</th>
+                                        </tr>
+                                </thead>
+                                <tbody>
+                                    
+                                </tbody>
+                        </table>
+                        
+                </div>
+        </div>
+</div>
+<br>
+    <div id="ui-datepicker-div" class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all"></div>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="http://libs.baidu.com/jqueryui/1.9.0/jquery-ui.min.js "></script>
+    <script src="https://cdn.bootcss.com/metisMenu/3.0.4/metisMenu.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdn.bootcss.com/startbootstrap-sb-admin-2/3.3.7+1/js/sb-admin-2.min.js"></script>
+
+    <script type="text/javascript" src="/assets/manager-js/main.js"></script>
+    
+</body>
+<script>
+    $(document).ready(function(){
+        $.get("/manager/getcars",function(data){
+            var cars = JSON.parse(data);
+            for(var i=0;i<cars.length;i++)
+            {
+                var tr = $("<tr></tr>");
+                var td1 = $("<td>"+ cars[i].id +"</td>");
+                var td2 = $("<td>"+ cars[i].brand +"</td>");
+                var td3 = $("<td>"+ cars[i].price +"</td>");
+                console.log(cars[i].url);
+                var td4 = $("<td><img src="+cars[i].url+" width='50px' height='40px'></td>");
+                var td5 = $("<td></td>");
+                var a1 = $("<a href='/manager/editcar?id="+cars[i].id+"'><img src='/assets/manager-images/edit.png' alt='修改'></a>");
+                var a2 = $("<a href='/manager/deletecars?id="+cars[i].id+"'><img src='/assets/manager-images/delete.png' alt='删除'></a>");
+                td5.append(a1);
+                td5.append(a2);
+                tr.append(td1);
+                tr.append(td2);
+                tr.append(td3);
+                tr.append(td4);
+                tr.append(td5);
+                $("tbody").append(tr);
+            }
+        });
+
+    });
+</script>
+</html>

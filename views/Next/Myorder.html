@@ -1,0 +1,122 @@
+<html><head>
+    <title>租车订单</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="description" content="">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="">
+    
+   <link rel="stylesheet" href="/assets/myident-css/tasp.css">
+   <link href="/assets/myident-css/orderconfirm.css" rel="stylesheet">
+   
+   <style>
+   #page{width:auto;}
+   #comm-header-inner,#content{width:950px;margin:auto;}
+   #logo{padding-top:26px;padding-bottom:12px;}
+   #header .wrap-box{margin-top:-67px;}
+   #logo .logo{position:relative;overflow:hidden;display:inline-block;width:140px;height:35px;font-size:35px;line-height:35px;color:#f40;}
+   #logo .logo .i{position:absolute;width:140px;height:35px;top:0;left:0;background:url(http://a.tbcdn.cn/tbsp/img/header/logo.png);}
+   </style>
+   
+   </head>
+   <body data-spm="1"><div id="BAIDU_DUP_fp_wrapper" style="position: absolute; left: -1px; bottom: -1px; z-index: 0; width: 0px; height: 0px; overflow: hidden; visibility: hidden; display: none;"><iframe id="BAIDU_DUP_fp_iframe" src="https://pos.baidu.com/wh/o.htm?ltr=" style="width: 0px; height: 0px; visibility: hidden; display: none;"></iframe></div>
+   
+   
+   <div id="page">
+   
+    <div id="content" class="grid-c">
+   
+     <div id="address" class="address" style="margin-top: 20px;" data-spm="2">
+   <form name="addrForm" id="addrForm" action="#">
+    <div>
+    <h3 class="dib">确认订单信息</h3>
+    <table cellspacing="0" cellpadding="0" class="order-table" id="J_OrderTable" summary="统一下单订单信息区域">
+    <caption style="display: none">统一下单订单信息区域</caption>
+    <thead>
+    <tr>
+    <th class="s-title">车辆信息<hr></th>
+    <th class="s-price">租车费(元)<hr></th>
+    <th class="s-amount">取还地址<hr></th>
+    <th class="s-agio">下单时间<hr></th>
+    <th class="s-total">小计(元)<hr></th>
+    </tr>
+    </thead>
+        
+   
+   
+   <tbody data-spm="3" class="J_Shop" data-tbcbid="0" data-outorderid="47285539868" data-isb2c="false" data-postmode="2" data-sellerid="1704508670">
+   <tr class="first"><td colspan="5"></td></tr>
+   <tr class="shop blue-line">
+    <td colspan="3">
+      </td>
+    <td colspan="2" class="promo">
+    <div>
+      <ul class="scrolling-promo-hint J_ScrollingPromoHint">
+          </ul>
+      </div>
+    </td>
+   </tr>
+    <!-- <tr class="item" data-lineid="19614514619:31175333266:35612993875" data-pointrate="0"> -->
+        <!-- <td class="s-title">
+          <a href="#" target="_blank" class="J_MakePoint" data-point-url="http://log.mmstat.com/buy.1.5">
+            <img src="/assets/myident-images/pricing-1-1.png" class="itempic"><span class="title J_MakePoint">Mercedes benz taxi</span></a>
+  
+          <div class="props">
+          <span>Model: E Class 2010 Model</span>
+          <span>Passengers:  4</span>
+          <span>Luggage:   2</span>
+        </div>
+        </td> -->
+        <!-- <td class="s-price">
+          
+        <span class="price ">
+        <em class="style-normal-small-black J_ItemPrice">666.00</em>
+        </span>
+      </td> -->
+        <!-- <td class="s-agio">
+              <div class="J_Promotion promotion" data-point-url="">广东省珠海市香洲区</div>
+          </td>-->
+
+   <!-- </tr> -->
+   
+
+   </tbody>
+     <tfoot>
+    <tr>
+    <td colspan="5">
+   
+   <div class="order-go" data-spm="4">
+   <div class="J_AddressConfirm address-confirm">
+    <div style="margin-bottom: 40px;">
+          <a href="/CarRental" class="back J_MakePoint" target="_top" data-point-url="">返回主页</a>
+          <a id="J_Go" class=" btn-go" data-point-url="" tabindex="0">提交订单<b class="dpl-button"></b></a>
+          
+     </div>
+    </div>
+   
+    </div>
+    </td>
+    </tr>
+    </tfoot>
+    </table>
+   </div>
+   </form>
+   </div>
+   <script src="/assets/js/jquery-3.4.1.min.js"></script>
+   <script>
+      $(document).ready(function(){
+        $.ajax({
+          url:"/getbook",
+          type: "post",
+          async:true,
+          dataType:"json",
+          success:function(data){
+              for(var i=0;i<data.length;i++)
+              {
+                $(".J_Shop").append('<tr class="item" data-lineid="19614514619:31175333266:35612993875" data-pointrate="0"><td class="s-title"><a href="#" target="_blank" class="J_MakePoint"><span class="title J_MakePoint">'+data[i].model+'</span></a><div class="props"><span>Model:'+data[i].model+'</span><span>'+data[i].type+'</span><td class="s-price"><span class="price "><em class="style-normal-small-black J_ItemPrice">'+data[i].price+'</em></span><td class="s-agio"><div class="J_Promotion promotion" data-point-url="">广东省珠海市香洲区</div></td><td class="s-total"><span class="price "><em class="style-normal-bold-red J_ItemTotal ">'+data[i].time+'</em></span><input id="furniture_service_list_b_47285539868" type="hidden" name="furniture_service_list_b_47285539868"></td>        <td class="s-total"><span class="price "><em class="style-normal-bold-red J_ItemTotal ">订单完成</em></span><input id="furniture_service_list_b_47285539868" type="hidden" name="furniture_service_list_b_47285539868"></td><tr class="shop-total blue-line"><td colspan="5">合计：<span class="price g_price "><em class="style-middle-bold-red J_ShopTotal">'+data[i].price+'</em></span><input type="hidden" name="1704508670:2|creditcard" value="false"><input type="hidden" id="J_IsLadderGroup" name="isLadderGroup" value="false"></td></tr></tr>');
+              }
+          }
+        })
+      })
+   </script>
+   </body>
+   </html>

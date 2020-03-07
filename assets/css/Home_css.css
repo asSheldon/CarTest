@@ -1,0 +1,221 @@
+body{
+    text-align:center;
+    background-color: black;
+}
+.news a{
+    text-decoration:none;
+    color: #fff;
+}
+#container a{
+    text-decoration:none;
+    color: #fff;
+}
+#container p{
+    text-decoration:none;
+    color: #fff;
+}
+.news a:hover{
+    text-decoration:none;
+    color: tomato;
+}
+.title{
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #e1e1e1;
+}
+.title-headline{
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #e1e1e1;
+}
+.title-headline h2 {
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.left-imgview{
+    width: 360px;
+    float: left;
+}
+.right{
+    margin-top:5px ;
+}
+
+.box{
+    width:300px;
+    height: 620px;
+    border: 1px solid #d8d8d8;
+    overflow: hidden;
+}
+.box .line{
+    width:300px;
+    height: 50px;
+    margin: 0 auto;
+    border-bottom: 1px solid #ddd;
+    line-height: 50px;
+
+}
+.box span{
+    font: bold 18px '微软雅黑';
+    color: #000;
+    padding: 15px;
+    border-bottom: 2px solid red;
+}
+.box #more{
+    float: right;
+    font-weight: bold;
+    color: #9f9f9f;
+    text-decoration: none;
+}
+.box #more:hover{
+    color: red;
+}
+.box ul{
+    list-style: none;
+    width:300px;
+    height: 258px;
+    padding:0;
+    margin: 7px auto 0;
+}
+.box ul li{
+    height:36px;
+    border-bottom: 1px solid #ddd;
+    /*background: url(dot.gif) left center no-repeat;*/
+}
+.box ul a{
+    float:left;
+    height:36px;
+    font: bold 14px/36px '微软雅黑';
+    text-decoration: none;
+    text-indent: 30px;
+    color: #000;
+    /*background: url(icon.jpg) 5px center no-repeat;*/
+}
+.box ul a:hover{
+    color: red;
+}
+.box ul p{
+    float: right;
+    height: 36px;
+    font:bold 14px/36px '微软雅黑';
+    color: #000;
+}
+.btn-success {
+    color: #fff;
+    background-color: #28a745;
+    border-color: #28a745;
+}
+.athm-slide__inner{
+    list-style-type: none;
+    padding: 0px;
+    float: left;
+    position: relative;
+}
+.athm-slide__inner li{
+    display:inline-block;
+}
+
+.navbar-collapse .type-name {
+    display: inline-block;
+    font-size: 12px;
+    text-align: center;
+    padding-left: 5px;
+    vertical-align: bottom;
+}
+.navbar-nav li.nav-item1 .type-icon{
+    width: 55px;
+    background-position: center -0px;
+}   
+.collapse .type-icon {
+    float: left;
+    height: 37px;
+    overflow: hidden;
+    background: url(//s.autoimg.cn/fe/topbar/carnav_icon.png) no-repeat;
+}
+.navbar-nav li.nav-item2 .type-icon {
+    width: 55px;
+    background-position: center -37px;
+}
+.navbar-nav li.nav-item3 .type-icon {
+    width: 75px;
+    background-position: center -74px;
+}
+.navbar-nav li.nav-item4 .type-icon {
+    width: 85px;
+    background-position: center -111px;
+}
+.navbar-nav li.nav-item5 .type-icon {
+    width: 85px;
+    background-position: center -148px;
+}
+.navbar-nav li.nav-item6 .type-icon {
+    width: 93px;
+    background-position: center -185px;
+}
+.navbar-nav li.nav-item7 .type-icon {
+    width: 95px;
+    background-position: center -222px;
+}
+.navbar-nav li.nav-item8 .type-icon {
+    width: 90px;
+    background-position: center -259px;
+}
+.navbar-nav li.nav-item9 .type-icon {
+    width: 85px;
+    background-position: center -296px;
+}
+.navbar-nav li.nav-item10 .type-icon {
+    width: 85px;
+    background-position: center -333px;
+}
+footer {
+    background-color: #111111;
+    padding: 20px 15px;
+    overflow: hidden;
+}
+.container {
+    max-width: 720px;
+}
+.row {
+    margin-right: -.9375rem;
+    margin-left: -.9375rem;
+}
+
+footer .footer-containertent {
+    padding-left: 100px;
+}
+footer ul {
+    display: inline-block;
+}
+ul {
+    padding: 0;
+    list-style: none;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+footer p {
+    color: #fff;
+    margin-bottom: 15px;
+    font-size: 13px;
+        font-weight: 400;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+.footer-social-info li {
+    width: 44px;
+    height: 44px;
+    margin: 0px 15px 0px auto;
+    text-align: center;
+    float: left;
+    padding: 8px;
+    border: 1px solid #6E6E6E;
+    border-radius: 50%;
+}
+.footer a{
+    text-decoration:none;
+    color: #fff;
+}

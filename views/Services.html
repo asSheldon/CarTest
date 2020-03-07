@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Services</title>
+    <link rel="stylesheet" type="text/css" href="../assets/commodity/css/fonts.css">
+    <link rel="stylesheet" type="text/css" href="../assets/commodity/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../assets/commodity/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../assets/commodity/css/ion.rangeSlider.css">
+    <link rel="stylesheet" type="text/css" href="../assets/commodity/css/ion.rangeSlider.skinFlat.css">
+    <link rel="stylesheet" type="text/css" href="../assets/commodity/js/plugin/magnific/magnific-popup.css">
+    <link rel="stylesheet" type="text/css" href="../assets/commodity/js/plugin/nice_select/nice-select.css">
+    <link rel="stylesheet" type="text/css" href="../assets/commodity/css/style.css">
+    <link rel="stylesheet" type="text/css" href="../assets/commodity/css/fly.css">
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="/assets/css/style1.css">
+    <link href="../assets/css/scrolling-nav.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../assets/css/styles.css">
+  
+</head>
+<body>
+    <!-- 头部 -->
+    <!-- <header id="top"> -->
+            <nav class="navbar navbar-expand-lg navbar-dark bg-white fixed-top" id="mainNav">
+                    <div class="container">
+                      <a class="navbar-brand js-scroll-trigger" href="/">car <b>plus</b></a>  
+                      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="ti-menu text-white"></span>
+                      </button>
+                      <div class="collapse navbar-collapse" id="navbarResponsive">
+                        <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link js-scroll-trigger" href="/">Home</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link js-scroll-trigger" href="/services">Services</a>
+                          </li>
+                           <li class="nav-item">
+                            <a class="nav-link js-scroll-trigger" href="/CarRental">Car Rental</a>
+                          </li>
+                          {{if user}}
+                         
+                          {{else}}
+                          <li class="nav-item">
+                                <a class="nav-link js-scroll-trigger cart" href="/login">Login</a>
+                              </li>
+                          {{/if}}
+                        </ul>
+                        <ul class="nav navbar-nav navbar-right" >
+                            {{if user}}
+                                <a class="navbar-brand" href="/">
+                                    <img width="25px" src="/images/head.jpg" alt="" >&nbsp;&nbsp;{{user}}</a>
+                                <li class="dropdown">
+                                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img width="20" height="20" src="../public/img/avatar-max-img.png" alt=""> <span class="caret"></span></a>
+                                  <ul class="dropdown-menu">
+                                    <li class="dropdown-current-user">
+                                      当前登录用户: {{user}}
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="/setting/admin">个人主页</a></li>
+                                    <li><a href="/myident">我的订单</a></li>
+                                    <li><a href="/shopping">购物车</a></li>
+                                    <li><a href="/out">退出</a></li>
+                                  </ul>
+                                </li>
+                                {{else}}
+                                {{/if}}
+                              </ul>
+                              
+                      </div>
+                    </div>
+                  </nav>
+                <!-- </header> -->
+    <!-- 内容 -->
+    <div class="impl_purchase_wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12">
+                    <div class="impl_purchase_inner">
+                        <div class="row">
+                            <div class="col-lg-3 col-md-4">
+                                <div class="impl_sidebar">
+                                    <div class="impl_product_search widget woocommerce">
+                                        <div class="impl_footer_subs">
+                                            <input type="text" class="form-control" placeholder="Search...">
+                                            <button class="foo_subs_btn"><i class="fa fa-search" aria-hidden="true"></i></button>
+                                        </div>
+                                    </div>
+                                    <!--Brands-->
+                                    <div class="impl_product_brand widget woocommerce">
+                                        <h2 class="widget-title">品牌</h2>
+                                        <ul>
+                                            <li>
+                                                <label class="brnds_check_label">
+												奥迪
+												<input type="checkbox" name="check" value="奥迪"> 
+												<span class="label-text"></span>
+											</label>
+                                            </li>
+                                            <li>
+                                                <label class="brnds_check_label">
+												宝马
+												<input type="checkbox" name="check" value="宝马"> 
+												<span class="label-text"></span>
+											</label>
+                                            </li>
+                                            <li>
+                                                <label class="brnds_check_label">
+											大众
+												<input type="checkbox" name="check" value="大众"> 
+												<span class="label-text"></span>
+											</label>
+                                            </li>
+                                            <li>
+                                                <label class="brnds_check_label">
+											保时捷
+												<input type="checkbox" name="check" value="保时捷"> 
+												<span class="label-text"></span>
+											</label>
+                                            </li>
+                                            <li>
+                                                <label class="brnds_check_label">
+											奔驰
+												<input type="checkbox" name="check" value="奔驰"> 
+												<span class="label-text"></span>
+											</label>
+                                            </li>
+                                            <li>
+                                                <label class="brnds_check_label">
+											标致
+												<input type="checkbox" name="check" value="标致"> 
+												<span class="label-text"></span>
+											</label>
+                                            </li>
+                                            <li>
+                                                <label class="brnds_check_label">
+											兰博基尼
+												<input type="checkbox" name="check" value="兰博基尼"> 
+												<span class="label-text"></span>
+											</label>
+                                            </li>
+                                            <li>
+                                                <label class="brnds_check_label">
+                                            迈凯伦
+												<input type="checkbox" name="check" value="迈凯伦"> 
+												<span class="label-text"></span>
+											</label>
+                                            </li>
+                                            <li>
+                                                <label class="brnds_check_label">
+											路虎
+												<input type="checkbox" name="check" value="路虎"> 
+												<span class="label-text"></span>
+											</label>
+                                            </li>
+                                            <li>
+                                                <label class="brnds_check_label">
+											布加迪 
+												<input type="checkbox" name="check" value="布加迪"> 
+												<span class="label-text"></span>
+											</label>
+                                            </li>
+                                            <li>
+                                                <label class="brnds_check_label">
+											本田
+												<input type="checkbox" name="check" value="本田"> 
+												<span class="label-text"></span>
+											</label>
+                                            </li>
+                                            <li>
+                                                <label class="brnds_check_label">
+											凯迪拉克
+												<input type="checkbox" name="check" value="凯迪拉克"> 
+												<span class="label-text"></span>
+											</label>
+                                            </li>
+                                            <li>
+                                                <label class="brnds_check_label">
+											牧马人
+												<input type="checkbox" name="check" value="牧马人"> 
+												<span class="label-text"></span>
+											</label>
+                                            </li>
+                                            <li>
+                                                <label class="brnds_check_label">
+											jeep
+												<input type="checkbox" name="check" value="jeep"> 
+												<span class="label-text"></span>
+											</label>
+                                            </li>
+                                            <li>
+                                                <label class="brnds_check_label">
+											别克
+												<input type="checkbox" name="check" value="别克"> 
+												<span class="label-text"></span>
+											</label>
+                                            </li>
+                                            <li>
+                                                <label class="brnds_check_label">
+											比亚迪
+												<input type="checkbox" name="check" value="比亚迪"> 
+												<span class="label-text"></span>
+											</label>
+                                            </li>
+                                            <li>
+                                                <label class="brnds_check_label">
+											福特
+												<input type="checkbox" name="check" value="福特"> 
+												<span class="label-text"></span>
+											</label>
+                                            </li>
+                                            <li>
+                                                <label class="brnds_check_label">
+											红旗
+												<input type="checkbox" name="check" value="红旗"> 
+												<span class="label-text"></span>
+											</label>
+                                            </li>
+                                            <li>
+                                                <label class="brnds_check_label">
+											捷豹
+												<input type="checkbox" name="check" value="捷豹"> 
+												<span class="label-text"></span>
+											</label>
+                                            </li>
+                                            <li>
+                                                <label class="brnds_check_label">
+											雷克萨斯
+												<input type="checkbox" name="check" value="雷克萨斯"> 
+												<span class="label-text"></span>
+											</label>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <!--Colors-->
+                                    <div class="impl_product_color widget woocommerce">
+                                        <h2 class="widget-title">color</h2>
+                                        <ul>
+                                            <li>
+                                                <label class="brnds_check_label">
+												black
+												<input type="checkbox" name="color" value="Black"> 
+												<span class="label-text"></span>
+											</label>
+                                            </li>
+                                            <li>
+                                                <label class="brnds_check_label">
+												blue
+												<input type="checkbox" name="color" value="Blue"> 
+												<span class="label-text"></span>
+											</label>
+                                            </li>
+                                            <li>
+                                                <label class="brnds_check_label">
+												white
+												<input type="checkbox" name="color" value="White"> 
+												<span class="label-text"></span>
+											</label>
+                                            </li>
+                                            <li>
+                                                <label class="brnds_check_label">
+												yellow
+												<input type="checkbox" name="color" value="Yellow"> 
+												<span class="label-text"></span>
+											</label>
+                                            </li>
+                                            <li>
+                                                <label class="brnds_check_label">
+												red
+												<input type="checkbox" name="color" value="Red"> 
+												<span class="label-text"></span>
+											</label>
+                                            </li>
+                                            <li>
+                                                <label class="brnds_check_label">
+												grey 	
+												<input type="checkbox" name="color" value="Grey"> 
+												<span class="label-text"></span>
+											</label>
+                                            </li>
+                                            <li>
+                                                <label class="brnds_check_label">
+												brown
+												<input type="checkbox" name="color" value="Brown"> 
+												<span class="label-text"></span>
+											</label>
+                                            </li>
+                                            <li>
+                                                <label class="brnds_check_label">
+												orange
+												<input type="checkbox" name="color" value="Orange"> 
+												<span class="label-text"></span>
+											</label>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 商品页 -->
+                            <div class="carlist col-lg-9 col-md-8">
+                                <div class="row carshow">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <span class="gotop"><img src="../assets/commodity/images/goto.png" alt=""></span>
+	<!--Main js file Style-->
+    <script type="text/javascript" src="../assets/commodity/js/jquery.js"></script>
+    <script src="/assets/js/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../assets/commodity/js/fly.js"></script>
+    <script type="text/javascript" src="../assets/commodity/js/car.js"></script>
+    <script type="text/javascript" src="../assets/commodity/js/popper.js"></script>
+    <script type="text/javascript" src="../assets/commodity/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../assets/commodity/js/ion.rangeSlider.min.js"></script>
+    <script type="text/javascript" src="../assets/commodity/js/plugin/magnific/jquery.magnific-popup.min.js"></script>
+    <script type="text/javascript" src="../assets/commodity/js/plugin/nice_select/jquery.nice-select.min.js"></script>
+    <script type="text/javascript" src="../assets/commodity/js/custom.js"></script>
+</body>
+</html>

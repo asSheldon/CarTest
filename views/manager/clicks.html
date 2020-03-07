@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Car-后台管理员系统</title>
+    <link rel="stylesheet" href="/assets/manager-css/style.css">
+    <link rel="stylesheet" href="/assets/manager-css/jquery.wysiwyg.old-school.css">
+
+<!-- jQuery AND jQueryUI -->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="http://code.jquery.com/jquery-migrate-1.2.1.js"></script>
+<script src="http://libs.baidu.com/jqueryui/1.9.0/jquery-ui.min.js "></script>
+<script type="text/javascript" src="/assets/manager-js/min.js"></script>
+<!--<script type="text/javascript" src="js/index.js"></script>-->
+</head>
+
+<link href="https://cdn.bootcss.com/metisMenu/3.0.4/metisMenu.min.css" rel="stylesheet">
+<link href="https://cdn.bootcss.com/font-awesome/5.11.2/css/all.min.css" rel="stylesheet">
+<link href="https://cdn.bootcss.com/startbootstrap-sb-admin-2/3.3.7+1/css/sb-admin-2.min.css" rel="stylesheet">
+
+<link rel="stylesheet" type="text/css" href="/assets/manager-css/bootstrap.css">
+
+
+
+
+<!-- <link rel="stylesheet" type="text/css" href="../css/person.css"> -->
+
+
+<body>
+<script type="text/javascript" src="/assets/manager-js/main.js"></script>
+<link rel="stylesheet" href="/assets/manager-css/style2.css">
+    <div class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/person"><i class="fa fa-car fa-fw" aria-hidden="true" ></i>Car-管理系统</a>
+        </div>
+        <ul class="nav navbar-top-links navbar-right">
+            {{if user}}
+            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                Hi,{{user}}
+                <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i> </a>
+                <ul class="dropdown-menu dropdown-user">
+                    <li><a href="#"><i class="fa fa-user fa-fw"></i> 用户信息</a></li>
+                    <li><a href="#"><i class="fa fa-gear fa-fw"></i> 设置中心</a></li>
+                    <li class="divider"></li>
+                    <li><a href="/manager/login"><i class="fa fa-sign-out fa-fw"></i> 登出系统</a></li>
+                    
+                </ul>
+            </li>
+            {{else}}
+            {{/if}}
+        </ul>
+        <div class="navbar-default sidebar" role="navigation" style="display: block;">
+            <div class="sidebar-nav navbar-collapse">
+                <ul class="nav" id="side-menu">
+                    <li><a href="/manager/person"><i class="fa fa-dashboard fa-fw"></i>系统首页</a></li>
+                    <li><a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> 汽车管理<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li><a href="/manager/addcar">添加汽车</a></li>
+                            
+                        </ul>
+                    </li>
+                   <li><a href="#"><i class="fa fa-edit fa-fw"></i>统计查询<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li><a href="/manager/sales">销售量统计</a></li>
+                            <li><a href="/manager/clicks">点击量统计</a></li> 
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-question-circle-o fa-fw" aria-hidden="true"></i>关于系统</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="content" class="white">
+		<h1><img src="/assets/manager-images/chart.png" alt="">点击量统计</h1>
+		<div class="bloc">
+				<div class="title"> 客户点击量统计图 </div>
+				<div>
+						<div class="content" id="line" style="display: block;">
+								<table class="graph type-line dots tips" style="display: none;">
+										<caption>
+										2019年
+										</caption>
+										<thead>
+												<tr>
+													
+														<th scope="col">1</th>
+														<th scope="col">2</th>
+														<th scope="col">3</th>
+														<th scope="col">4</th>
+														<th scope="col">5</th>
+														<th scope="col">6</th>
+														<th scope="col">7</th>
+														<th scope="col">8</th>
+														<th scope="col">9</th>
+														<th scope="col">10</th>
+														<th scope="col">11</th>
+														<th scope="col">12</th>
+												</tr>
+										</thead>
+										<tbody>
+												<tr>
+													
+														<td>10</td>
+														<td>20</td>
+														<td>50</td>
+														<td>200</td>
+														<td>50</td>
+														<td>60</td>
+														<td>40</td>
+														<td>80</td>
+														<td>90</td>
+														<td>100</td>
+														<td>10</td>
+														<td>70</td>
+												</tr>
+										
+										</tbody>
+								</table>
+						</div>
+				</div>
+		</div>
+</div>
+    <div id="ui-datepicker-div" class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all"></div>
+    
+    <script src="https://cdn.bootcss.com/metisMenu/3.0.4/metisMenu.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdn.bootcss.com/startbootstrap-sb-admin-2/3.3.7+1/js/sb-admin-2.min.js"></script>
+</body>
+</html>
