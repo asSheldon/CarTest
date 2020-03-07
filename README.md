@@ -1,2 +1,2 @@
 ＃汽车测试
-＃基于异步，mysql，引导程序，完成租车网站
+＃基于vue，mysql，bootstrap，完成租车网站
